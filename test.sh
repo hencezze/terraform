@@ -14,7 +14,9 @@ sudo terraform plan
 sleep 1
 sudo terraform apply
 sleep 20
-if [[ `ping -c 1 $(terraform state show google_compute_instance.vm_instance | grep nat_ip | awk -F ' ' '{print $3}' | tr '"' ' ') | grep bytes | wc -l` -gt 1  ]] 
+echo "Please enter IP-Address of instance"
+read ip
+if [[ `ping -c 1 $ip | grep bytes | wc -l` -gt 1  ]] 
 then
    echo "IP-Address of instance is available"
    echo "Destroying instance and network"
