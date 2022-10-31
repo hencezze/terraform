@@ -9,7 +9,6 @@ provider "google" {
 module "network" {
   source = "./modules/networks/"
   region = var.region
-  zone = var.zone
 }
 
 
@@ -19,5 +18,6 @@ module "VM" {
   type = var.type
   network = module.network.ntwrk
   subnetwork = module.network.subntwrk
+  zone = var.zone
 }
 
