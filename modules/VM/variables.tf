@@ -7,7 +7,7 @@ variable "subnetwork" {
 }
 
 variable "type" {
-  default = "f1-micro"
+  type = string
 }
 
 variable "zone" {
