@@ -8,7 +8,7 @@ provider "google" {
 
 module "network" {
   source = "./modules/networks/"
-
+  region = var.region
 }
 
 
