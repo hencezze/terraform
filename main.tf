@@ -14,6 +14,7 @@ module "network" {
 
 module "VM" {
   source = "./modules/VM/"
+  type = var.type
   network = module.network.ntwrk
   subnetwork = module.network.subntwrk
 }
